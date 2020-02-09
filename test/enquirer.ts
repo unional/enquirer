@@ -295,7 +295,8 @@ describe('Enquirer', function () {
 
     it('should register a custom prompt type as a class', () => {
       class Foo extends Input { }
-      enquirer.register('foo', Enquirer.StringPrompt);
+
+      enquirer.register('foo', Foo);
       enquirer = new Enquirer({
         show: false,
         autofill: true
@@ -307,10 +308,9 @@ describe('Enquirer', function () {
         type: 'foo',
         name: 'color',
         message: 'Favorite color?'
-      })
-        .then(answers => {
-          assert.equal(answers.color, 'orange');
-        });
+      }).then(answers => {
+        assert.equal(answers.color, 'orange');
+      });
     });
 
     it('should register a custom prompt type as a function', () => {
