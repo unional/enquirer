@@ -186,7 +186,7 @@ declare namespace Enquirer {
       export type Field = {
         name: string,
         message?: string,
-        initial?: string
+        initial?: string,
         validate?: (value: string) => boolean | Promise<boolean>
       }
 
@@ -276,12 +276,12 @@ declare namespace Enquirer {
       prompt.FormQuestion.Answer
 
     export type QuestionBase = {
-      name: string;
-      message: string | (() => string | Promise<string>);
+      name: string,
+      message: string | (() => string | Promise<string>),
 
-      skip?: boolean | ((state: any) => boolean | Promise<boolean>);
-      show?: boolean;
-      onSubmit?: (name: string, value: string, prompt: Prompt) => boolean | Promise<boolean>;
+      skip?: boolean | ((state: any) => boolean | Promise<boolean>),
+      show?: boolean,
+      onSubmit?: (name: string, value: string, prompt: Prompt) => boolean | Promise<boolean>,
       onCancel?: (name: string, value: string, prompt: Prompt) => boolean | Promise<boolean>;
     }
 
@@ -302,40 +302,39 @@ declare namespace Enquirer {
     }
 
     export type Key = {
-      name?: string;
-      code?: string;
-      sequence?: string;
-      ctrl?: boolean;
-      shift?: boolean;
+      name?: string,
+      code?: string,
+      sequence?: string,
+      ctrl?: boolean,
+      shift?: boolean,
       fn?: boolean;
     }
 
     export type ChoiceInput = string | Promise<string> | ChoiceOptions | (() => string | Promise<string>)
 
     export type ChoiceOptions = {
-      name?: string;
-      message?: string;
-      hint?: string;
-      disabled?: boolean;
+      name?: string,
+      message?: string,
+      hint?: string,
+      disabled?: boolean,
       value?: types.Answer;
     }
 
     export type Choice = {
-      name: string;
-      message: string;
-      hint?: string;
-      disabled?: boolean;
+      name: string,
+      message: string,
+      hint?: string,
+      disabled?: boolean,
       value?: types.Answer;
     }
 
     export type PromptType = string
 
-
     export type Symbols = {
-      indicator: string;
-      check: string;
-      prefix: string;
-      separator: string;
+      indicator: string,
+      check: string,
+      prefix: string,
+      separator: string,
       [k: string]: string;
     } & SymbolsType;
 
@@ -490,26 +489,26 @@ declare namespace Enquirer {
 
     export type Question<T extends types.Answer = string, P extends Prompt<T> = Prompt<T>> = Question.Base &
     {
-      initial?: T | (() => Promise<T> | T);
-      default?: T;
+      initial?: T | (() => Promise<T> | T),
+      default?: T,
       // TODO: test is the function style needed
-      skip?: boolean | ((this: P, name: string | undefined, value: string | undefined) => boolean | Promise<boolean>);
-      value?: T;
-      format?: (this: P, value: T) => any;
-      result?: (this: P, value: T) => any;
+      skip?: boolean | ((this: P, name: string | undefined, value: string | undefined) => boolean | Promise<boolean>),
+      value?: T,
+      format?: (this: P, value: T) => any,
+      result?: (this: P, value: T) => any,
       validate?: (value: T) => boolean;
     }
 
     export namespace Question {
       export type Base = {
-        name?: string | (() => string);
-        type?: string | (() => string);
-        header?: string;
-        message: string | (() => string | Promise<string>);
-        footer?: string;
-        hint?: string;
-        timers?: Record<string, number | { interval?: number, frames: any[] }>;
-        show?: boolean;
+        name?: string | (() => string),
+        type?: string | (() => string),
+        header?: string,
+        message: string | (() => string | Promise<string>),
+        footer?: string,
+        hint?: string,
+        timers?: Record<string, number | { interval?: number, frames: any[] }>,
+        show?: boolean,
         symbols?: Partial<types.Symbols>;
       }
     }
@@ -524,9 +523,9 @@ declare namespace Enquirer {
 
   export namespace BooleanPrompt {
     export type Question = Omit<Prompt.Question<boolean>, 'initial' | 'default'> & {
-      initial?: string | boolean | (() => string | boolean | Promise<string | boolean>);
-      default?: string;
-      isTrue?: (input: boolean | string) => boolean;
+      initial?: string | boolean | (() => string | boolean | Promise<string | boolean>),
+      default?: string,
+      isTrue?: (input: boolean | string) => boolean,
       isFalse?: (input: boolean | string) => boolean;
     }
   }
@@ -696,10 +695,10 @@ declare namespace Enquirer {
   export namespace ArrayPrompt {
     export type Question<T extends types.Answer, P extends ArrayPrompt<T> = ArrayPrompt<T>> = Prompt.Question.Base &
     {
-      choices: (() => types.ChoiceInput[] | Promise<types.ChoiceInput[]>) | types.ChoiceInput[] | Promise<types.ChoiceInput[]>;
-      initial?: string | number | Array<string | number> | Record<string, any>;
-      autofocus?: number | string;
-      multiple?: boolean;
+      choices: (() => types.ChoiceInput[] | Promise<types.ChoiceInput[]>) | types.ChoiceInput[] | Promise<types.ChoiceInput[]>,
+      initial?: string | number | Array<string | number> | Record<string, any>,
+      autofocus?: number | string,
+      multiple?: boolean,
       format?: (this: P, value: T) => any,
       result?: (this: P, value: T) => any,
     }

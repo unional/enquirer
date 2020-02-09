@@ -91,6 +91,7 @@
     "jest-watch-suspend": "^1.1.2",
     "jest-watch-toggle-config": "^1.0.2",
     "prompts": "^1.2.1",
+    "stdio-mock": "^1.1.0",
     "time-require": "github:jonschlinkert/time-require",
     "ts-jest": "^25.2.0",
     "type-plus": "^1.31.3",

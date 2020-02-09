@@ -6388,6 +6388,11 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
+stdio-mock@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/stdio-mock/-/stdio-mock-1.1.0.tgz#cf6fcbbf03048436a83fe7ff647c5b9f28528005"
+  integrity sha1-z2/LvwMEhDaoP+f/ZHxbnyhSgAU=
+
 stealthy-require@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
