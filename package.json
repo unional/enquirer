@@ -1,50 +1,7 @@
 {
   "name": "enquirer",
+  "version": "2.3.4",
   "description": "Stylish, intuitive and user-friendly prompt system. Fast and lightweight enough for small projects, powerful and extensible enough for the most advanced use cases.",
-  "version": "2.3.6",
-  "homepage": "https://github.com/enquirer/enquirer",
-  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-  "contributors": [
-    "Brian Woodward (https://twitter.com/doowb)",
-    "Jon Schlinkert (http://twitter.com/jonschlinkert)"
-  ],
-  "repository": "enquirer/enquirer",
-  "bugs": {
-    "url": "https://github.com/enquirer/enquirer/issues"
-  },
-  "license": "MIT",
-  "files": [
-    "index.js",
-    "index.d.ts",
-    "lib"
-  ],
-  "main": "index.js",
-  "typings": "index.d.ts",
-  "engines": {
-    "node": ">=8.6"
-  },
-  "scripts": {
-    "test": "mocha && mocha -r ts-node/register ts-test/*.ts",
-    "test:ts": "mocha -r ts-node/register ts-test/*.ts",
-    "cover": "nyc --reporter=text --reporter=html mocha test/*.js",
-    "cover:ts": "nyc --reporter=text --reporter=html mocha -r ts-node/register ts-test/*.ts"
-  },
-  "dependencies": {
-    "ansi-colors": "^4.1.1"
-  },
-  "devDependencies": {
-    "@types/mocha": "^7.0.1",
-    "@types/node": "^8",
-    "gulp-format-md": "^2.0.0",
-    "inquirer": "^6.2.0",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
-    "prompts": "^1.2.1",
-    "time-require": "github:jonschlinkert/time-require",
-    "ts-node": "^8.6.1",
-    "type-plus": "^1.31.3",
-    "typescript": "^3.1.6"
-  },
   "keywords": [
     "answer",
     "answers",
@@ -55,8 +12,8 @@
     "command-line",
     "confirm",
     "enquirer",
-    "generator",
     "generate",
+    "generator",
     "hyper",
     "input",
     "inquire",
@@ -67,13 +24,13 @@
     "node",
     "nodejs",
     "prompt",
-    "prompts",
     "promptly",
+    "prompts",
     "question",
     "readline",
     "scaffold",
-    "scaffolding",
     "scaffolder",
+    "scaffolding",
     "stdin",
     "stdout",
     "terminal",
@@ -83,6 +40,65 @@
     "yo",
     "zsh"
   ],
+  "homepage": "https://github.com/enquirer/enquirer",
+  "bugs": {
+    "url": "https://github.com/enquirer/enquirer/issues"
+  },
+  "repository": "enquirer/enquirer",
+  "license": "MIT",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "contributors": [
+    "Brian Woodward (https://twitter.com/doowb)",
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)"
+  ],
+  "files": [
+    "cjs"
+  ],
+  "sideEffects": false,
+  "main": "cjs/index.js",
+  "module": "mjs/index.js",
+  "jsnext:main": "mjs/index.js",
+  "typings": "cjs/index.d.ts",
+  "scripts": {
+    "build": "yarn build:cjs",
+    "build:cjs": "tsc -i -p tsconfig.cjs.json",
+    "clean": "rimraf .ts coverage cjs",
+    "coverage": "jest --coverage",
+    "lint": "eslint --ext=js,ts .",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "watch": "yarn test:watch"
+  },
+  "dependencies": {
+    "ansi-colors": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-typescript": "^7.8.3",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^8",
+    "@unional/devpkg-node": "^1.4.2",
+    "babel-jest": "^25.1.0",
+    "gulp-format-md": "^2.0.0",
+    "husky": "^4.2.1",
+    "inquirer": "^6.2.0",
+    "jest": "^25.1.0",
+    "jest-watch-repeat": "^2.0.0",
+    "jest-watch-suspend": "^1.1.2",
+    "jest-watch-toggle-config": "^1.0.2",
+    "prompts": "^1.2.1",
+    "time-require": "github:jonschlinkert/time-require",
+    "ts-jest": "^25.2.0",
+    "type-plus": "^1.31.3",
+    "typescript": "^3.7.5"
+  },
+  "engines": {
+    "node": ">=8.6"
+  },
   "lintDeps": {
     "devDependencies": {
       "files": {

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
+    "lib": [
+      "es2015"
+    ],
+    "newLine": "LF",
+    "noStrictGenericChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "strict": true
+  },
+  "include": [
+    "src"
+  ],
+  "files": [
+    "src/index.ts"
+  ]
+}

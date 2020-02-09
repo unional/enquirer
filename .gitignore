@@ -15,7 +15,6 @@ node_modules
 npm-debug.log
 
 # yarn
-yarn.lock
 yarn-error.log
 
 # misc
@@ -30,3 +29,7 @@ TODO.md
 package-lock.json
 
 !docs/todo.md
+
+# project
+.ts
+cjs

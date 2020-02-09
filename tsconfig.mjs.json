@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "module": "esnext",
+    "outDir": "mjs",
+    "target": "ES2017",
+    "tsBuildInfoFile": ".ts/mjs.tsbuildinfo"
+  }
+}
