@@ -41,8 +41,6 @@ describe('prompt-autocomplete', () => {
     });
 
     it('should filter by keypress', function () {
-      this.timeout(5000);
-
       prompt = new Prompt({
         message: 'Favorite letters?',
         choices: [
@@ -403,7 +401,6 @@ describe('prompt-autocomplete', () => {
     });
 
     it('should dynamically add choices', function () {
-      this.timeout(5000);
       let pending = fixtures.slice();
 
       prompt = new Prompt({
