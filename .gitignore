@@ -31,5 +31,6 @@ package-lock.json
 !docs/todo.md
 
 # project
+.progress
 .ts
 cjs
