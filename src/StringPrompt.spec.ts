@@ -1,12 +1,13 @@
-import { stdio } from 'stdio-mock'
 import { StringPrompt } from './StringPrompt'
+import { testIO } from './testutils'
 
 describe('options.initial', () => {
   it('should use options.initial when submitted without changes', async () => {
-    // TODO: use `mocktomata` with `@mocktomata/plugin-node` to simulate stdio
-    const { stdin, stdout } = stdio()
-    const prompt = new StringPrompt({ stdin, stdout, message: 'foo', initial: 'init-value' })
+    const io = testIO()
+    const prompt = new StringPrompt({ message: 'foo', initial: 'init-value' })
 
+    prompt.once('run', () => io.enter())
+    setImmediate(() => prompt.submit())
     const value = await prompt.run()
 
     expect(value).toBe('init-value')

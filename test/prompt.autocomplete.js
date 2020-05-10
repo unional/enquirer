@@ -193,7 +193,7 @@ describe('prompt-autocomplete', () => {
       });
 
       return prompt.run()
-        .then(answer => assert.equal(answer, 'c'))
+        .then(answer => assert.equal(answer, 'c'));
     });
   });
 
@@ -350,7 +350,7 @@ describe('prompt-autocomplete', () => {
         choices: fixtures.slice(),
         suggest(typed, choices) {
           return choices.filter(choice => choice.message.includes(typed));
-        },
+        }
       });
 
       prompt.once('run', async() => {
@@ -409,19 +409,19 @@ describe('prompt-autocomplete', () => {
       prompt = new Prompt({
         message: 'Favorite flavor?',
         choices() {
-          return new Promise(async(resolve) => {
+          return new Promise((resolve) => {
             setTimeout(() => resolve([]), 3);
           });
         },
         async suggest(input, choices = []) {
-          return new Promise(async(resolve) => {
+          return new Promise((resolve) => {
             if (!input) {
               resolve(choices);
               return;
             }
 
             let list = pending.filter(str => str.startsWith(input));
-            let items = await Promise.all(await this.toChoices(list));
+            let items = Promise.all(this.toChoices(list));
             for (let item of items) {
               if (!this.find(item.name)) {
                 this.choices.push(item);
